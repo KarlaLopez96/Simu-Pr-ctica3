@@ -1,3 +1,4 @@
+#include <fstream>
 #include <iostream>
 #include "math_tools.h"
 #include "classes.h"
@@ -12,7 +13,7 @@ int main(){
     
     Matrix K;
     Vector b;
-    Vector T;
+    Vector u;
 
     cout << "IMPLEMENTACI"<<char(224)<<"N DEL M"<<char(144)<<"TODO DE LOS ELEMENTOS FINITOS\n"
          << "\t- TRANSFERENCIA DE CALOR\n" << "\t- 1 DIMENSI"<<char(224)<<"N\n"
@@ -31,11 +32,11 @@ int main(){
     applyNeumann(m,b);
     
     applyDirichlet(m,K,b);
-    zeroes(T,b.size());
-    calculate(K,b,T);
+    zeroes(u,b.size());
+    calculate(K,b,u);
 
     cout << "La respuesta es: \n";
-    showVector(T);
+    showVector(u);
 
     return 0;
 }
